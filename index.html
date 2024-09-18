@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call</title>
+    <style>
+        /* CSS cho bố cục video */
+        .video-container {
+            display: flex;
+            /* Sắp xếp các video theo chiều ngang */
+            justify-content: space-around;
+            /* Chia đều không gian giữa các video */
+        }
+
+        .video-box {
+            flex: 1;
+            /* Để mỗi video chiếm không gian bằng nhau */
+            padding: 10px;
+        }
+
+        video {
+            width: 100%;
+            /* Đảm bảo video chiếm toàn bộ không gian của div bao quanh */
+            border: 2px solid black;
+        }
+
+        #incoming-call {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgb(0, 255, 213);
+            padding: 20px;
+            border: 2px solid black;
+            z-index: 1000;
+        }
+
+
+
+        #accept-call-button {
+            background-color: #4CAF50;
+            /* Màu xanh lá cho nút Tham gia */
+            color: white;
+        }
+
+        #reject-call-button {
+            background-color: #f44336;
+            /* Màu đỏ cho nút Không tham gia */
+            color: white;
+        }
+
+        #accept-call-button:hover {
+            background-color: #45a049;
+            /* Đổi màu khi hover nút Tham gia */
+        }
+
+        #reject-call-button:hover {
+            background-color: #e53935;
+            /* Đổi màu khi hover nút Không tham gia */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WebRTC Video Call</h1>
+    <!-- Hiển thị Peer ID -->
+    <!-- <div>  
+        <h3>Your Peer ID: <span id="peer-id-display"></span></h3>
+    </div> -->
+    <div class="video-container">
+        <div class="video-box">
+            <h2>Your Video : <span id="peer-id-display"></span></h2>
+            <video id="my-video" autoplay playsinline></video>
+        </div>
+
+        <div class="video-box">
+            <h2>Peer's Video</h2>
+            <video id="peer-video" autoplay playsinline></video>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" id="peer-id" placeholder="Enter peer ID to call">
+        <button id="call-button">Call</button>
+        <button id="end-call-button">End Call</button>
+    </div>
+
+    <div id="incoming-call" style="display: none;">
+        <p>You have an incoming call!</p>
+        <button id="accept-call-button">Tham gia</button>
+        <button id="reject-call-button">Không tham gia</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
