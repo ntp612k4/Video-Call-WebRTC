@@ -1,0 +1,111 @@
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 36px;
+}
+
+.video-container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
+}
+
+.video-box {
+  flex: 1;
+  /* Để mỗi video chiếm không gian bằng nhau */
+  padding: 10px;
+}
+
+video {
+  width: 80%;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+#enter-peerid {
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  margin-top: 20px;
+}
+
+#enter-peerid input {
+  width: 300px; /* Tăng kích thước input */
+  height: 40px; /* Tăng chiều cao của input */
+  font-size: 18px; /* Tăng kích thước chữ */
+  padding: 5px;
+  margin-right: 10px; /* Tạo khoảng cách giữa input và nút Call */
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Tạo viền cho input */
+}
+
+#enter-peerid button {
+  width: 100px; /* Đặt chiều rộng của nút */
+  height: 40px; /* Tăng chiều cao của nút */
+  font-size: 16px; /* Tăng kích thước chữ trong nút */
+  margin-left: 5px; /* Tạo khoảng cách giữa các nút */
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#call-button {
+  background-color: #4caf50; /* Màu xanh cho nút Call */
+  color: white;
+  border: none;
+}
+
+#end-call-button {
+  background-color: #f44336; /* Màu đỏ cho nút End Call */
+  color: white;
+  border: none;
+}
+
+#incoming-call {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f0f8ff; /* Màu nền nhẹ nhàng hơn */
+  border: 2px solid #007bff; /* Tạo viền xanh dương */
+  border-radius: 10px; /* Bo góc cho hộp thoại */
+  padding: 20px; /* Thêm khoảng cách bên trong */
+  width: 300px; /* Giới hạn chiều rộng hộp thoại */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tạo hiệu ứng đổ bóng */
+}
+#incoming-call p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333; /* Màu chữ đậm dễ nhìn */
+  margin-bottom: 15px; /* Thêm khoảng cách dưới đoạn văn */
+}
+
+#incoming-call button {
+  width: 120px; /* Đặt kích thước nút */
+  height: 40px; /* Tăng chiều cao nút */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin: 0 10px; /* Khoảng cách giữa các nút */
+  cursor: pointer;
+}
+
+#accept-call-button {
+  background-color: #28a745; /* Nút màu xanh lá */
+  color: white;
+}
+
+#reject-call-button {
+  background-color: #dc3545; /* Nút màu đỏ */
+  width: 160px; /* Tăng chiều rộng để chữ không bị ngắt dòng */
+  height: 40px; /* Chiều cao của nút */
+  margin-top: 40px;
+  color: white;
+}
+
+#incoming-call button:hover {
+  opacity: 0.9; /* Hiệu ứng hover khi di chuột qua nút */
+}
+
+#incoming-call button:focus {
+  outline: none; /* Loại bỏ viền mặc định khi focus */
+}
